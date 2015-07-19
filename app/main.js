@@ -3,9 +3,9 @@ import React from "react";
 import Home from "./Home";
 import About from "./About";
 import Document from "./Document";
-import NoMatch from "./NoMatch";
+import NotFound from "./NotFound";
 import Router from 'react-router';  
-import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import { DefaultRoute, Link, Route, RouteHandler, NotFoundRoute } from 'react-router';
 
 let App = React.createClass({  
   render() {
@@ -23,10 +23,10 @@ let App = React.createClass({
 
 let routes = (  
   <Route name="app" path="/" handler={App}>
-  	<DefaultRoute name="home" handler={Home} />
+  	<DefaultRoute name="home" path="/home" handler={Home} />
     <Route name="about" path="/about" handler={About}/>
     <Route name="document" path="/doc/:id" handler={Document}/>
-    <Route name="nomatch" path="*" handler={NoMatch}/>
+    <NotFoundRoute handler={NotFound} />
   </Route>
 );
 
