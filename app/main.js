@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./Home";
 import About from "./About";
 import Document from "./Document";
+import DocumentEdit from "./DocumentEdit";
 import NotFound from "./NotFound";
 import Router from 'react-router';  
 import { DefaultRoute, Link, Route, RouteHandler, NotFoundRoute } from 'react-router';
@@ -26,6 +27,7 @@ let routes = (
   	<DefaultRoute name="home" path="/home" handler={Home} />
     <Route name="about" path="/about" handler={About}/>
     <Route name="document" path="/doc/:id" handler={Document}/>
+    <Route name="documentEdit" path="/doc/:id/edit" handler={DocumentEdit}/>
     <NotFoundRoute handler={NotFound} />
   </Route>
 );
