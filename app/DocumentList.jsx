@@ -20,7 +20,7 @@ export default class extends React.Component {
 	render() { 
 		var docs = this.state.docs.map(doc => 				
 			<tr key={doc.id}>
-				<td><Link to="document" params={{ id: doc.ref }}>{doc.ref}</Link></td>
+				<td><Link to="document" params={{ id: doc.id }}>{doc.ref}</Link></td>
 				<td>{doc.title}</td>
 				<td>{doc.MonNombre}</td>
 			</tr>

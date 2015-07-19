@@ -6,14 +6,14 @@ import Document from "./Document";
 import DocumentEdit from "./DocumentEdit";
 import NotFound from "./NotFound";
 import Router from 'react-router';  
-import { DefaultRoute, Link, Route, RouteHandler, NotFoundRoute } from 'react-router';
+import { DefaultRoute, Link, Route, RouteHandler, NotFoundRoute, Redirect } from 'react-router';
 
 let App = React.createClass({  
   render() {
     return (
 		<div>
 			<ul className="nav">
-				<li><Link to="home">Home</Link></li>
+				<li><Link to="/">Home</Link></li>
 				<li><Link to="/about">About</Link></li>
 			</ul>
 			<RouteHandler/>
@@ -23,12 +23,13 @@ let App = React.createClass({
 });
 
 let routes = (  
-  <Route name="app" path="/" handler={App}>
-  	<DefaultRoute name="home" handler={Home} />
+  <Route handler={App}>
+  	<DefaultRoute handler={Home} />
     <Route path="/about" handler={About}/>
     <Route name="document" path="/doc/:id" handler={Document}/>
     <Route name="documentEdit" path="/doc/:id/edit" handler={DocumentEdit}/>
     <NotFoundRoute handler={NotFound} />
+    <Redirect from="doc" to="/" />
   </Route>
 );
 
