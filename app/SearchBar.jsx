@@ -8,12 +8,12 @@ export default class extends React.Component{
 	handleChange(e){
 		this.setState({val:e.target.value});
 	}
-	clickHandle(e){
+	handleClick(e){
 		this.setState({val:''});
 	}
 	render() {
 		return (
-			<input type="text" value={this.state.val} onChange={this.handleChange.bind(this)} onClick={this.clickHandle.bind(this)} placeholder="Filtrer…"/>
+			<input type="text" value={this.state.val} onChange={this.handleChange.bind(this)} onClick={this.handleClick.bind(this)} placeholder="Filtrer…"/>
 		);
 	}
 
