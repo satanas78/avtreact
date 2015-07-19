@@ -2,6 +2,7 @@ import React from "react";
 import reactMixin from 'react-mixin';
 import {Navigation} from 'react-router';
 
+@reactMixin.decorate(Navigation)
 export default class MenuActions extends React.Component{
 
 	handleClick(e){
@@ -17,5 +18,3 @@ export default class MenuActions extends React.Component{
 	}
 
 };
-
-reactMixin.onClass(MenuActions, Navigation);

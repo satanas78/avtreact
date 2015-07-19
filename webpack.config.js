@@ -18,7 +18,7 @@ module.exports = {
     ],
     module: {
         loaders: [
-            { test: path.join(__dirname, './app'), loaders: ['react-hot', 'babel-loader'] },
+            { test: path.join(__dirname, './app'), loaders: ['react-hot', 'babel-loader?stage=1'] },
             { test: /\.css$/, loader: "style!css" },
             { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.eot$/, loader: "url" }
         ]
