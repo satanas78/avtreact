@@ -1,13 +1,21 @@
 import React from "react";
+import reactMixin from 'react-mixin';
+import {Navigation} from 'react-router';
 
-var MenuActions = React.createClass({
+export default class MenuActions extends React.Component{
 
-	render: function() {
+	handleClick(e){
+		e.preventDefault();
+		this.transitionTo('/doc/3/edit');
+	}
+
+	render() {
+
 		return (
-			<button>Créer un document</button> 
+			<button onClick={this.handleClick.bind(this)}>Créer un document</button> 
 		);
 	}
 
-});
+};
 
-module.exports = MenuActions;
+reactMixin.onClass(MenuActions, Navigation);
