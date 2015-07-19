@@ -14,7 +14,7 @@ let App = React.createClass({
 		<div>
 			<ul className="nav">
 				<li><Link to="home">Home</Link></li>
-				<li><Link to="about">About</Link></li>
+				<li><Link to="/about">About</Link></li>
 			</ul>
 			<RouteHandler/>
 		</div>
@@ -24,8 +24,8 @@ let App = React.createClass({
 
 let routes = (  
   <Route name="app" path="/" handler={App}>
-  	<DefaultRoute name="home" path="/home" handler={Home} />
-    <Route name="about" path="/about" handler={About}/>
+  	<DefaultRoute name="home" handler={Home} />
+    <Route path="/about" handler={About}/>
     <Route name="document" path="/doc/:id" handler={Document}/>
     <Route name="documentEdit" path="/doc/:id/edit" handler={DocumentEdit}/>
     <NotFoundRoute handler={NotFound} />
