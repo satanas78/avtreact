@@ -3,12 +3,24 @@ import { Link } from 'react-router';
 export default class extends React.Component {
 	constructor(props){
 		super(props);
+		this.state={docs:[
+			{
+				id: 1,
+				ref:'REF-001',
+				title:'Mon Titre', 
+				MonNombre:'123'
+			},{
+				id: 2,
+				ref:'REF-002',
+				title:'Mon Titre 2', 
+				MonNombre:'564'
+			}]};
 	}
 
 	render() { 
-		var docs = this.props.docs.map(doc => 				
+		var docs = this.state.docs.map(doc => 				
 			<tr key={doc.id}>
-				<td><Link to="/doc/:id" params={{ id: doc.id }}>{doc.ref}</Link></td>
+				<td><Link to="document" params={{ id: doc.id }}>{doc.ref}</Link></td>
 				<td>{doc.title}</td>
 				<td>{doc.MonNombre}</td>
 			</tr>
