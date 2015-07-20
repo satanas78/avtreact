@@ -13,7 +13,7 @@ export default class MenuActions extends React.Component{
 	render() {
 
 		return (
-			<button onClick={this.handleClick.bind(this)}>Créer un document</button> 
+			<button onClick={o => this.handleClick(o)}>Créer un document</button> 
 		);
 	}
 
