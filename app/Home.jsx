@@ -1,3 +1,4 @@
+"use strict";
 import React from "react";
 import MenuActions from "./MenuActions";
 import SearchBar from "./SearchBar";

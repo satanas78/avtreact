@@ -1,6 +1,7 @@
-import React from 'react';
-import DocumentEdit from './DocumentEdit';
-import {Link } from 'react-router';
+"use strict";
+import React from "react";
+import DocumentEdit from "./DocumentEdit";
+import {Link } from "react-router";
 
 export default class extends React.Component {
 	render() {
